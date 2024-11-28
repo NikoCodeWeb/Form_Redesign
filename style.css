@@ -17,10 +17,10 @@ body {
 .form-container {
     position: relative;
     z-index: 10;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 51, 75, 0.5);
     width: 80%;
     max-width: 400px;
     margin: auto;
@@ -229,9 +229,9 @@ body {
         position: relative;
         padding: 15px;
         width: 80%;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.7);
         border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
+        box-shadow: 0 0 20px  rgba(0, 51, 75, 0.5);
         margin: auto;
         top: 20vh;
         color: #00ffea;

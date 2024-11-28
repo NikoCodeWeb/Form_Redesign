@@ -166,7 +166,8 @@
             ctx.font = `${fontSize}px monospace`;
 
             for (let i = 0; i < drops.length; i++) {
-                const text = Math.random() > 0.5 ? "0" : "1";
+                const characters=["A","B","C","D","E","F","G","0","1","X","Y","Z"];
+                text=characters[Math.floor(Math.random()*characters.length)];
                 ctx.fillText(text, i * fontSize, drops[i] * fontSize);
                 ctx.fillStyle = "#00c3ff";
                 if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
@@ -176,7 +177,7 @@
             }
         }
 
-        setInterval(drawMatrix, 50);
+        setInterval(drawMatrix, 100);
     </script>
 
     
