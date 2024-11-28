@@ -1,0 +1,247 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: black;
+    height: 100vh;
+    font-family: 'Vazir', sans-serif;
+    text-align: center;
+    direction: rtl;
+    font-size: 1rem;
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+    color: #00e5ff;
+}
+
+.form-container {
+    position: relative;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+    top: 20vh;
+    color: #00ffea;
+}
+
+.question {
+    display: none;
+    justify-content: center;
+}
+
+.question.active {
+    display: block;
+}
+.question h3 {
+    margin: 0 0 15px;
+    font-size: 1.2rem;
+}
+
+.question label {
+    display: inline-flex;
+    align-items: center;
+    margin: 8px 0;
+    color: #00ffea;
+    font-size: 1rem;
+}
+
+.question input[type="text"],
+.question input[type="email"],
+.question input[type="password"] {
+    width: 50%;
+    padding: 8px;
+    background: black;
+    border: 1px solid #00ffea;
+    color: #00ffea;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+.question label {
+    display: inline-flex;
+    align-items: center;
+    margin: 8px 0; 
+    color: #00ffea;
+}
+
+.question input[type="radio"],
+.question input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    margin: 0 0px 0 10px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #00ffea;
+    border-radius: 50%; 
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.question input[type="checkbox"] {
+    border-radius: 4px; 
+}
+
+.question input[type="radio"]:checked,
+.question input[type="checkbox"]:checked {
+    background-color: #00ffea; 
+    border-color: #00ffea;
+}
+
+.question input[type="radio"]:checked::before,
+.question input[type="checkbox"]:checked::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    background-color: #00ffea; 
+    border-radius: 50%; 
+}
+
+.question input[type="checkbox"]:checked::before {
+    border-radius: 2px; 
+}
+
+
+.question button {
+    padding: 10px 15px;
+    background: #00ffea;
+    border: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    margin-top: 10px;
+    font-family: 'Vazir';
+}
+
+.question button:hover {
+    background: #009994;
+}
+
+.navigation-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.navigation-buttons button {
+    margin: 5px;
+}
+  
+.matrix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    color: rgba(0, 234, 255, 0.5);
+}
+
+.star {
+    position: absolute;
+    font-size: 14px;
+    color: rgba(0, 234, 255, 0.5);
+    animation: fall infinite linear;
+    white-space: nowrap;
+}
+.cant {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 100%;
+  margin: auto;
+  text-align: right;
+}
+
+.cant div {
+  flex: 1 1 45%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.cant input[type="text"] {
+    margin-right: 5px;
+  }
+  
+  .cant button {
+    margin: 5px;
+  }
+  
+  .can {
+      display: flex;
+      justify-content:space-around; 
+      align-items:center;
+      margin: 10% 0; 
+  
+  }
+  
+  .can1, .can2 {
+      display: flex;
+      align-items: center;
+  }
+  .titel {
+    display: flex;
+    justify-content:center; 
+    align-items:center; 
+}
+  .logo {
+    width: 50px; 
+    height: 50px; 
+    padding: 8px;
+}
+@keyframes fall {
+    0% {
+        transform: translateY(-120%);
+        visibility:hidden;
+        opacity: 0;
+    }
+    20% {
+        visibility: visible;
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    .form-container {
+        position: relative;
+        padding: 15px;
+        width: 80%;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
+        margin: auto;
+        top: 20vh;
+        color: #00ffea;
+    }
+
+    .question h3 {
+        font-size: 1rem;
+    }
+
+    .cant div {
+        flex: 1 1 100%;
+    }
+}

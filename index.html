@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <title>فرم  عضویت انجمن علمی مهندسی کامپیوتر آموزشکده الزهرا</title>
+    <link rel="shortcut icon"  href="http://cs-club-alzahra.freehost.io/logo1.png"/>
+</head>
+<body>
+    <canvas id="matrixCanvas" class="matrix"></canvas>
+    <div class="form-container">
+        <div class="titel">
+                <img src="logo1.png" alt="Logo 1" class="logo">
+        <h3>فرم عضویت در انجمن</h3>
+        </div>
+        <form id="form" action="submit.php" method="POST">
+            <div class="question active" id="question1">
+                <label for="name">نام و نام خانوادگی:</label><br>
+                <input type="text" id="name" name="name" placeholder=" نام و نام خانوادگی وارد کنید"required><br><br>
+                <button type="button" onclick="nextQuestion(2)">بعدی</button>
+            </div>
+            <div class="question" id="question2">
+                <label for="studentID">شماره دانشجویی:</label><br>
+                <input type="text" id="studentID" name="studentID" placeholder="مثال: ۹۸۰۱۲۳۴۵۶" required><br><br>
+        
+                <button type="button" onclick="prevQuestion(1)">قبلی</button>
+                <button type="button" onclick="nextQuestion(20)">بعدی</button>
+            </div>
+            <div class="question" id="question20">
+                <label for="phoneNumber">شماره تلفن:</label><br>
+                <input type="text" id="phoneNumber" name="phoneNumber" placeholder="شماره تلفنی که پاسخگو هستید وارد" required><br><br>
+                <button type="button" onclick="prevQuestion(2)">قبلی</button>
+                <button type="button" onclick="nextQuestion(3)">بعدی</button>
+            </div>
+            <div class="question" id="question3">
+                <label for="major">چرا مایلید عضو انجمن ما شوید؟</label><br>
+                <input type="text" id="major" name="major" placeholder="صادقانه پاسخ دهید"><br><br>
+        
+                <button type="button" onclick="prevQuestion(2)">قبلی</button>
+                <button type="button" onclick="nextQuestion(4)">بعدی</button>
+            </div>
+            <div class="question" id="question4">
+                <label for="degree">مقطع تحصیلی:</label><br>
+                <div class="can">
+                    <div class="can1">
+                <input type="radio" name="degree" value="کاردانی"> کاردانی<br>
+            </div><div class="can2">
+                <input type="radio" name="degree" value="کارشناسی"> کارشناسی <br>
+                </div></div>
+                <button type="button" onclick="prevQuestion(3)">قبلی</button>
+                <button type="button" onclick="nextQuestion(5)">بعدی</button>
+            </div>
+            <div class="question" id="question5">
+                <label for="entryYear">سال ورود:</label><br>
+                <input type="text" id="entryYear" name="entryYear"  placeholder="مثال: ۱۴۰۰" required><br><br>
+                <button type="button" onclick="prevQuestion(4)">قبلی</button>
+                <button type="button" onclick="nextQuestion(6)">بعدی</button>
+            </div>
+            <div class="question" id="question6">
+                <label>به کدام زبان‌های برنامه‌نویسی مسلط هستید؟</label><br>
+                <div class="cant">
+                <div>
+                <input type="checkbox" name="skills[]" value="Python"> پایتون<br>
+                </div>
+                <div>
+                <input type="checkbox" name="skills[]" value="C++"> سی‌پلاس‌پلاس<br>
+                </div>
+                <div>
+                <input type="checkbox" name="skills[]" value="JavaScript"> جاوااسکریپت<br>
+                </div>
+                <div>
+                <input type="checkbox" name="skills[]" value="PHP"> PHP<br>
+                </div>
+                <div>
+                <input type="checkbox" name="skills[]" value="Other"> سایر: <input type="text" name="otherSkill" placeholder="مهارت‌های خود را بنویسید"><br><br>
+                </div>
+            </div>
+                    <button type="button" onclick="prevQuestion(5)">قبلی</button>
+                    <button type="button" onclick="nextQuestion(7)">بعدی</button>
+            
+        </div>
+            <div class="question" id="question7">
+                <label>تجربه کار با سیستم‌ مدیریت محتوای Git را داشته اید؟</label><br>
+                <input type="radio" name="gitExperience" value="Yes"> بله<br>
+                <input type="radio" name="gitExperience" value="No"> خیر<br><br>
+        
+                <button type="button" onclick="prevQuestion(6)">قبلی</button>
+                <button type="button" onclick="nextQuestion(8)">بعدی</button>
+            </div>
+            <div class="question" id="question8">
+                <label>به کدام حوزه‌های علوم کامپیوتر علاقه‌مند هستید؟</label><br>
+                <div class="cant">
+                    <div>
+                <input type="checkbox" name="interests[]" value="Machine Learning"> یادگیری ماشین<br>
+            </div><div>
+                <input type="checkbox" name="interests[]" value="Cybersecurity"> امنیت سایبری<br>
+            </div><div>
+                <input type="checkbox" name="interests[]" value="Web Development"> توسعه وب<br>
+            </div><div>
+                <input type="checkbox" name="interests[]" value="Networking"> شبکه<br><br>
+                </div></div>
+                <button type="button" onclick="prevQuestion(7)">قبلی</button>
+                <button type="button" onclick="nextQuestion(9)">بعدی</button>
+            </div>
+            <div class="question" id="question9">
+                <label>آیا تجربه مدیریت یا همکاری در تیم‌های پروژه‌های کامپیوتری دارید؟</label><br>
+            <div class="cant"><div>
+                <input type="radio" name="teamExperience" value="Leader"> بله، به‌عنوان مدیر پروژه<br>
+            </div><div>
+                <input type="radio" name="teamExperience" value="Member"> بله، به‌عنوان عضو تیم<br>
+            </div><div>
+                <input type="radio" name="teamExperience" value="None"> خیر<br><br>
+            </div>
+            </div>
+                <button type="button" onclick="prevQuestion(8)">قبلی</button>
+                <button type="button" onclick="nextQuestion(10)">بعدی</button>
+            </div>
+            <div class="question" id="question10">
+                <label>در صورت عضویت در انجمن، می‌خواهید چه نقشی داشته باشید؟</label><br>
+            <div class="cant">
+            <div>
+                <input type="radio" name="role" value="Leader"> رهبری تیم‌ها<br>
+            </div><div>
+                <input type="radio" name="role" value="ActiveMember"> عضو فعال<br>
+            </div><div>
+                <input type="radio" name="role" value="TechnicalAdvisor"> مشاور فنی<br>
+            </div><div>
+                <input type="radio" name="role" value="SimpleMember"> عضوی ساده<br><br>
+            </div></div>
+                <button type="button" onclick="prevQuestion(9)">قبلی</button>
+                <button type="button" onclick="nextQuestion(11)">بعدی</button>
+            </div>
+            <div class="question" id="question11">
+                <label>آیا ایده‌هایی برای یک محصول یا پروژه نوآورانه دارید؟</label><br>
+            <div class="cant"><div>
+                <input type="radio" name="innovation" value="Implemented"> بله، عملی کرده‌ام<br>
+            </div><div>
+                <input type="radio" name="innovation" value="NotImplemented"> بله، ولی عملی نکردم<br>
+            </div><div>
+                <input type="radio" name="innovation" value="None"> خیر<br><br>
+            </div></div>
+        
+                <button type="button" onclick="prevQuestion(10)">قبلی</button>
+                <button type="submit">ارسال</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        const canvas = document.getElementById("matrixCanvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const fontSize = 16;
+        const columns = Math.floor(canvas.width / fontSize);
+        const drops = Array(columns).fill(1);
+
+        function drawMatrix() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#00ff0000";
+            ctx.font = `${fontSize}px monospace`;
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = Math.random() > 0.5 ? "0" : "1";
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                ctx.fillStyle = "#00c3ff";
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 50);
+    </script>
+
+    
+    <script>
+        function nextQuestion(questionNumber) {
+            var current = document.querySelector('.question.active');
+            current.classList.remove('active');
+            var next = document.getElementById('question' + questionNumber);
+            next.classList.add('active');
+        }
+    
+        function prevQuestion(questionNumber) {
+            var current = document.querySelector('.question.active');
+            current.classList.remove('active');
+            var prev = document.getElementById('question' + questionNumber);
+            prev.classList.add('active');
+        }
+    </script>
+</body>
+</html>
+ 
